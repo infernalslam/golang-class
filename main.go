@@ -7,16 +7,20 @@ import(
 func main() {
 	// prime := isPrime(9)
 	// fmt.Printf("%t\n", prime)
-	number := []int {2, 4, 5}
-	calculate(number)
+	numbers := []int {2, 4, 5}
+	calculate(numbers)
 	// fmt.Printf("%v\n", number)
 	// send value array in function calculate
 
 }
 
 
-func calculate(number []int) {
-	fmt.Printf("%v\n", number)
+func calculate(numbers []int) {
+	// fmt.Printf("%v\n", number)
+	// something check for range
+	for _, number := range numbers {
+		fmt.Printf("%v\n", number)
+	}
 }
 
 func isPrime(num int) bool {
