@@ -5,8 +5,18 @@ import(
 )
 
 func main() {
-	prime := isPrime(9)
-	fmt.Printf("%t\n", prime)
+	// prime := isPrime(9)
+	// fmt.Printf("%t\n", prime)
+	number := []int {2, 4, 5}
+	calculate(number)
+	// fmt.Printf("%v\n", number)
+	// send value array in function calculate
+
+}
+
+
+func calculate(number []int) {
+	fmt.Printf("%v\n", number)
 }
 
 func isPrime(num int) bool {
