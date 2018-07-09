@@ -5,20 +5,19 @@ import(
 )
 
 func main() {
-	fmt.Printf("Hello, world.\n")
-	isPrime(9)
+	prime := isPrime(9)
+	fmt.Printf("%t\n", prime)
 }
 
-func isPrime(num int) {
+func isPrime(num int) bool {
 	numberIsPrime := true
 	for i := 2; i <= num / 2; i++ {
 		if num % i == 0 {
-			// fmt.Printf("%d\n", num)
 			numberIsPrime = false
-			// fmt.Printf("%t\n", numberIsPrime)
 			break
 		}
 	}
+	return numberIsPrime
 }
 
 
