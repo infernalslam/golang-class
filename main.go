@@ -21,7 +21,7 @@ func calculate(numbers []int) (int, float32){
 			count++
 		}
 	}
-	return result, float32(result / count)
+	return result, float32(result) / float32(count)
 }
 
 
