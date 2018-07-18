@@ -42,4 +42,5 @@ func GenerateCaptcha() (string, int) {
 }
 
 func main() {
+	fmt.Println("Hello Test")
 }
