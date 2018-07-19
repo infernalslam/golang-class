@@ -41,8 +41,11 @@ func get() {
 
 	var starwarPeople StarwarPeople
 	json.Unmarshal(body, &starwarPeople)
-	fmt.Println(starwarPeople)
+	// fmt.Println(starwarPeople)
 
 	blob, _ := json.Marshal(starwarPeople)
 	fmt.Println(string(blob))
+}
+
+func post() {
 }
