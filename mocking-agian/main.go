@@ -3,16 +3,17 @@ package main
 import (
 	"fmt"
 	"io"
+	"os"
 )
 
 // Countdown is function loopback count
 func Countdown(word io.Writer) {
-	fmt.Fprint(word, "3")
+	for i := 3; i > 0; i-- {
+		fmt.Fprintln(word, i)
+	}
+	fmt.Fprint(word, "Go!")
 }
 
 func main() {
-	fmt.Println("Hello, Gopher~!☺️ I'm countdown......")
-	// buffer := &bytes.Buffer{}
-	// fmt.Printf("result %b", buffer) // &{[] 0 [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0] 0}%
-	// Countdown()
+	Countdown(os.Stdout)
 }
