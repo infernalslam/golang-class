@@ -10,6 +10,11 @@ import (
 const finalWord = "Go!"
 const countdownStart = 3
 
+// struc zone
+type Sleeper interface {
+	Sleep()
+}
+
 // Countdown is function loopback count
 func Countdown(word io.Writer) {
 	for i := countdownStart; i > 0; i-- {
