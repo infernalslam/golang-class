@@ -17,8 +17,13 @@ func rectangleArea(x1, y1, x2, y2 float64) float64 {
 	return l * w
 }
 
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
+
 func main() {
 	fmt.Print("Hello Gopher!")
 	res := distance(1, 2, 3, 4)
+	res = rectangleArea(1, 2, 3, 4)
 	fmt.Printf("result %f", res)
 }
