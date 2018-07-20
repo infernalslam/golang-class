@@ -11,5 +11,13 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
 	})
-	e.Logger.Fatal(e.Start(":1323"))
+	// all route
+	e.GET("/users/:id", getUser)
+
+	e.Logger.Fatal(e.Start(":8080"))
+}
+
+func getUser(c echo.Context) error {
+	id := c.Param("id")
+	return c.String(http.StatusOK, id)
 }
