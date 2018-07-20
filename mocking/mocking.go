@@ -7,30 +7,29 @@ import (
 	"time"
 )
 
-type SpySleeper struct {
-	Calls int
-}
-
 type Sleeper interface {
 	Sleep()
 }
 
-func (s *SpySleeper) Sleep() {
-	s.Calls++
+type RealSleeper struct{}
+
+func (s *RealSleeper) Sleep() {
 	time.Sleep(1 * time.Second)
 }
 
-// Countdown test
-func Countdown(w io.Writer, s *SpySleeper) {
-	for index := 3; 0 <= index; index-- {
-		if index == 0 {
-			fmt.Fprintf(w, "Go!")
-		} else {
-			fmt.Fprintf(w, "%v\n", index)
-		}
-		s.Sleep()
-	}
-}
 func main() {
-	Countdown(os.Stdout, &SpySleeper{})
+	Countdown(os.Stdout, &RealSleeper{})
+}
+
+const finalWord = "Go!"
+const coundownStart = 3
+
+func Countdown(w io.Writer, s Sleeper) {
+	for i := coundownStart; i > 0; i-- {
+		s.Sleep()
+		fmt.Fprintf(w, "%d\n", i)
+	}
+
+	s.Sleep()
+	fmt.Fprintf(w, finalWord)
 }
