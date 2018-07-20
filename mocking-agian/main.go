@@ -10,21 +10,31 @@ import (
 const finalWord = "Go!"
 const countdownStart = 3
 
-// struc zone
+// // struc zone
+// DefaultSleeper default
+type DefaultSleeper struct{}
+
+// logic
+func (r *DefaultSleeper) Sleep() {
+	time.Sleep(1 * time.Second)
+}
+
+// sleep() should real funcftion call only
 type Sleeper interface {
 	Sleep()
 }
 
 // Countdown is function loopback count
-func Countdown(word io.Writer) {
+func Countdown(word io.Writer, s Sleeper) {
 	for i := countdownStart; i > 0; i-- {
-		time.Sleep(1 * time.Second)
+		s.Sleep()
 		fmt.Fprintln(word, i)
 	}
-	time.Sleep(1 * time.Second)
+	s.Sleep()
 	fmt.Fprint(word, finalWord)
 }
 
 func main() {
-	Countdown(os.Stdout)
+	sleeper := &DefaultSleeper{}
+	Countdown(os.Stdout, sleeper)
 }
