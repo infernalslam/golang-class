@@ -21,10 +21,14 @@ func circleArea(r float64) float64 {
 	return math.Pi * r * r
 }
 
+// structure data zone
+
+type rectangle struct {
+	x1, y1, x2, y2 float64
+}
+
 func main() {
-	fmt.Print("Hello Gopher!")
-	res := distance(1, 2, 3, 4)
-	res = rectangleArea(1, 2, 3, 4)
-	res = circleArea(2.1)
-	fmt.Printf("result %f", res)
+	// rec := new(rectangle) or
+	rec := rectangle{x1: 10, y1: 20, x2: 8, y2: 7}
+	fmt.Printf("rec %f", rec)
 }
