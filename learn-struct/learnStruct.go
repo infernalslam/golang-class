@@ -23,7 +23,7 @@
 
 // func main() {
 // 	fmt.Print("Hello Gopher!")
-// 	res := distance(1, 2, 3, 4)
+// 	res := distance(10, 20, 8, 7)
 // 	res = rectangleArea(1, 2, 3, 4)
 // 	res = circleArea(2.1)
 // 	fmt.Printf("result %f", res)

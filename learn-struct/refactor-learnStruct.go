@@ -30,5 +30,8 @@ type rectangle struct {
 func main() {
 	// rec := new(rectangle) or
 	rec := rectangle{x1: 10, y1: 20, x2: 8, y2: 7}
-	fmt.Printf("rec %f", rec)
+	// send to distance function
+	res := distance(rec.x1, rec.y1, rec.x2, rec.y2)
+
+	fmt.Printf("rec %f", res)
 }
