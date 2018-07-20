@@ -22,8 +22,12 @@ func (s *RealSleeper) Sleep() {
 	time.Sleep(1 * time.Second)
 }
 
+func (c *ConfigurableSleeper) Sleep() {
+}
+
 func main() {
-	Countdown(os.Stdout, &RealSleeper{})
+	sleeper := &ConfigurableSleeper{1 * time.Second, time.Sleep}
+	Countdown(os.Stdout, sleeper)
 }
 
 const finalWord = "Go!"
