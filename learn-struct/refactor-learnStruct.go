@@ -30,13 +30,27 @@ type rectangle struct {
 	x1, y1, x2, y2 float64
 }
 
+type circle struct {
+	x1, x2, r float64
+}
+
+// call methods circle
+func (c *circle) area() float64 {
+	return math.Pi * c.r * c.r
+}
+
 func main() {
 	// rec := new(rectangle) or
-	rec := rectangle{x1: 10, y1: 20, x2: 8, y2: 7}
+	// rec := rectangle{x1: 10, y1: 20, x2: 8, y2: 7}
+	// call structure circle
 	// send to distance function
-	res := distance(rec) // so, change parameter
-	res = rectangleArea(rec)
+	// res := distance(rec) // so, change parameter
+	// res = rectangleArea(rec)
 
-	fmt.Printf("rec %f\n", res)
-	fmt.Println("Gopher is sccuess!")
+	// fmt.Printf("rec %f\n", res)
+	// fmt.Println("Gopher is sccuess!")
+
+	cir := circle{0, 0, 4}
+	fmt.Printf("rec %f\n", cir)
+	fmt.Println(cir.area())
 }
