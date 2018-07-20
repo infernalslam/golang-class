@@ -10,16 +10,15 @@ import (
 const finalWord = "Go!"
 const countdownStart = 3
 
-// // struc zone
 // DefaultSleeper default
 type DefaultSleeper struct{}
 
-// logic
+// Sleep logic
 func (r *DefaultSleeper) Sleep() {
 	time.Sleep(1 * time.Second)
 }
 
-// sleep() should real funcftion call only
+// Sleeper should real funcftion call only
 type Sleeper interface {
 	Sleep()
 }
