@@ -1,15 +1,13 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
+	"io"
 )
 
-// w io.Writer
-
 // Countdown is function loopback count
-func Countdown(number *bytes.Buffer) {
-	fmt.Fprint(number, "3")
+func Countdown(word io.Writer) {
+	fmt.Fprint(word, "3")
 }
 
 func main() {
