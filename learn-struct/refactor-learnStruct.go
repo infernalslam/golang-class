@@ -35,6 +35,8 @@ func main() {
 	rec := rectangle{x1: 10, y1: 20, x2: 8, y2: 7}
 	// send to distance function
 	res := distance(rec) // so, change parameter
+	res = rectangleArea(rec)
 
-	fmt.Printf("rec %f", res)
+	fmt.Printf("rec %f\n", res)
+	fmt.Println("Gopher is sccuess!")
 }
