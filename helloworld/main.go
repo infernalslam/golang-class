@@ -3,9 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(Hello())
+	fmt.Println(Hello("Gopher"))
 }
 
-func Hello() string {
-	return "Hello Gopher"
+func Hello(name string) string {
+	if name != "" {
+		return "Hello, " + name
+	}
+	return "Hello"
 }
