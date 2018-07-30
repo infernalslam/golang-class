@@ -38,6 +38,7 @@ func get() {
 		fmt.Println(err)
 	}
 	body, err := ioutil.ReadAll(response.Body)
+	fmt.Println(string(body)) // console.log() === fmt.Println
 
 	var starwarPeople StarwarPeople
 	json.Unmarshal(body, &starwarPeople)
